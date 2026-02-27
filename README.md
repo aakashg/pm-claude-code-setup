@@ -2,9 +2,10 @@
 
 A ready-to-use Claude Code configuration for product managers. Drop these files into your project and Claude Code immediately understands PM work.
 
-Includes a `CLAUDE.md` context file and one starter skill. Takes 60 seconds to set up.
+Includes a `CLAUDE.md` context file and a PRD writer skill. Takes 60 seconds to set up.
 
-**This is a free starter. The full PM OS has 41+ skills, 7 sub-agents, and a complete context library.**
+**This setup works on its own — drop it in and Claude Code immediately understands PM work. The full PM Operating System goes much further: 41+ skills, 7 sub-agent perspectives, a complete context library, launch templates, and sprint planning workflows that I've iterated on 100+ times.**
+
 **[Get the full PM Operating System →](https://www.news.aakashg.com/p/pm-os)**
 
 ---
@@ -60,7 +61,7 @@ Say "write a PRD" or "create a PRD for [feature]" and Claude:
 
 ## Want the Full Setup?
 
-This starter gets you going. The full PM OS includes:
+This setup handles the core PM workflow. The full PM OS covers every PM task I do daily:
 
 - 41+ custom skills for every PM task
 - 7 sub-agent perspectives (engineer, designer, executive, skeptic, customer, data analyst, legal)
