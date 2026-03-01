@@ -74,3 +74,47 @@ This setup handles the core PM workflow. The full PM OS covers every PM task I d
 ---
 
 Built by [Aakash Gupta](https://www.aakashg.com) | [Product Growth Newsletter](https://www.news.aakashg.com)
+
+---
+
+## Troubleshooting
+
+Common issues and how to fix them.
+
+### Claude doesn't seem to follow my CLAUDE.md instructions
+
+- **Check the file location.** CLAUDE.md must be in your project root (the directory where you run `claude`). Claude Code loads it automatically from the working directory.
+- **Check file size.** If your CLAUDE.md exceeds ~150 lines, Claude may start ignoring parts of it. Prune aggressively. Move domain knowledge into skills.
+- **Check for conflicting instructions.** If two rules contradict each other, Claude picks one unpredictably. Audit for conflicts.
+- **Restart the session.** Run `/clear` or start a new terminal. Claude loads CLAUDE.md at session start.
+
+### Skills aren't triggering
+
+- **Verify the path.** Skills must be at `.claude/skills/<skill-name>/SKILL.md` (exact casing matters).
+- **Check the trigger.** The SKILL.md needs a clear trigger phrase that matches how you're asking. If your SKILL.md says "triggers when user asks to write a PRD" but you say "draft a spec," Claude may not connect them.
+- **Test with an explicit request.** Try: "Use the prd-writer skill to write a PRD for X." If that works but natural language doesn't, refine your trigger description.
+- **Check that SKILL.md isn't empty or malformed.** Open it and verify it has content.
+
+### Claude forgets context mid-conversation
+
+- **You've hit context limits.** Long conversations degrade quality after ~50 exchanges. Use `/clear` and start fresh with a summary.
+- **Use handoffs.** Before clearing, ask Claude to write a HANDOFF.md summarizing state, decisions, and next steps. Start the new session with "Read @HANDOFF.md and continue."
+- **Don't paste huge docs.** Use `@` references instead of pasting entire documents into chat.
+
+### Hooks aren't running
+
+- **Check `.claude/settings.json`.** Hooks are configured there, not in CLAUDE.md.
+- **Check exit codes.** Hooks use exit 0 (proceed) and exit 2 (block + feedback). Other exit codes may cause unexpected behavior.
+- **Check permissions.** Hook scripts need to be executable (`chmod +x`).
+
+### MCP servers won't connect
+
+- **Verify credentials.** Most MCP servers need API keys or OAuth tokens. Check that yours are current.
+- **Check the server config.** MCP connections are configured in Claude Code settings, not CLAUDE.md. CLAUDE.md just documents them for your reference.
+- **Restart Claude Code.** MCP connections are established at startup.
+
+### "I changed CLAUDE.md but nothing changed"
+
+Claude reads CLAUDE.md at session start. If you edited it mid-session:
+1. Run `/clear` to reset context (CLAUDE.md reloads automatically)
+2. Or start a new terminal session
