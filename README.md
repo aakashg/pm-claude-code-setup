@@ -1,5 +1,8 @@
 # PM Claude Code Setup
 
+[![Stars](https://img.shields.io/github/stars/aakashg/pm-claude-code-setup?style=flat-square)](https://github.com/aakashg/pm-claude-code-setup/stargazers)
+[![License](https://img.shields.io/github/license/aakashg/pm-claude-code-setup?style=flat-square)](LICENSE)
+
 A ready-to-use Claude Code configuration for product managers. Drop these files into your project and Claude Code immediately understands PM work.
 
 Includes a `CLAUDE.md` context file and a PRD writer skill. Takes 60 seconds to set up.
