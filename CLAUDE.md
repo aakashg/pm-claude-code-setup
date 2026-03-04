@@ -38,20 +38,23 @@ When I say "review as [role]," adopt that perspective fully:
 
 ---
 
-## Output Standards
+## Behavior
 
-- Never generate a PRD, analysis, or plan without asking 3-5 clarifying questions first.
+- Ask 3-5 clarifying questions before generating any deliverable. Never assume.
 - Default to short. If output exceeds 2 pages, ask if that depth is needed.
-- Every metric needs a baseline, target, and timeframe. No vague "improve engagement."
-- Every risk needs a mitigation. Every blocker needs a next step and owner.
-- Non-goals go early in any spec. Best defense against scope creep.
-- For AI features, include: 15-25 behavior examples (input/output pairs), edge cases, eval criteria.
+- Flag missing info with `[NEED: data from X]` — never fabricate data, quotes, or metrics.
+- When I correct you, propose a new rule for this file so the mistake doesn't repeat. Wait for my approval before editing.
+- Use `/clear` proactively — suggest it when context is getting stale or tasks are unrelated.
+- Before ending a long session, offer to write a HANDOFF.md with current state, decisions, open questions, and next steps.
+- Reference files with `@path/to/file` instead of asking me to paste content. Keep the context window lean.
+- Use `Shift+Tab` (Plan Mode) automatically before multi-step or multi-file tasks. Outline the approach, wait for approval, then execute.
+- When a task has independent subtasks, run them in parallel using subagents. Don't serialize work that can be parallelized.
 
 ---
 
 ## Skills
 
-Task-specific workflows live in `.claude/skills/` and load on demand. Reference `@templates/` for structure. Don't duplicate skill logic here.
+Task-specific workflows live in `.claude/skills/` and load on demand. This file stays lean — domain logic belongs in skills, not here.
 
 ---
 
