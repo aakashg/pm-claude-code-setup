@@ -51,19 +51,16 @@ Done. Claude now knows you're a PM, follows your writing style, and writes PRDs 
 
 ## What the CLAUDE.md Does
 
-`CLAUDE.md` is mostly pre-configured with power-user techniques. A small section at the top has `[FILL IN]` fields for your specifics. The rest is ready to go:
+`CLAUDE.md` is a lean config file — not a manual. It tells Claude who you are, how to write, and what rules to follow. Fill in the `[FILL IN]` fields at the top (~2 minutes), and the rest works immediately:
 
-- **Your context** (fill in once) — role, product, metrics, OKRs, terminology
-- **Writing rules** — enforced tone, banned words, formatting standards
-- **Sub-agent roles** — 6 reviewers (engineer, designer, executive, skeptic, customer, data analyst) with chaining patterns
-- **Skills system** — progressive disclosure, auto-triggering, how to create your own
-- **@ references** — point to files instead of pasting them
-- **Plan Mode** — when to use Shift+Tab, when to skip
-- **Hooks** — guaranteed automation with exit codes, pre/post tool events
-- **Session management** — context hygiene, handoffs, parallel sessions
-- **Self-improving loop** — how CLAUDE.md gets smarter over time
-- **MCP connections** — native integrations with Notion, Jira, Slack, etc.
-- **Quick reference** — every command and shortcut in one block
+- **Your context** — role, product, metrics, OKRs, terminology
+- **Writing rules** — enforced tone, banned words, output standards
+- **Sub-agent roles** — 6 reviewers in a table (engineer, designer, executive, skeptic, customer, data analyst)
+- **Output standards** — clarifying questions before generating, metrics with baselines, risks with mitigations
+- **Skills reference** — points to `.claude/skills/` without duplicating their logic
+- **MCP connections** — your integrations (Notion, Jira, Slack, etc.)
+
+The file is intentionally under 60 lines. Claude follows short, specific instructions better than long ones.
 
 ## What the PRD Writer Skill Does
 
@@ -75,17 +72,73 @@ Say "write a PRD" or "create a PRD for [feature]" and Claude:
 4. Keeps it under 2 pages unless you ask for more
 5. Includes success metrics with specific numbers and guardrails
 
-## Power Tips
+## How to Get the Most Out of This Setup
 
-These habits maximize the system's value:
+### Chain Sub-Agents
 
-**Chain sub-agents for better PRDs.** Write the PRD, then: "Review as engineer" -- fix gaps -- "Review as skeptic" -- tighten assumptions -- "Review as customer" -- simplify the value prop. Three passes, three minutes, dramatically better spec.
+Write a PRD → "Review as engineer" → fix gaps → "Review as skeptic" → tighten assumptions → "Review as customer" → simplify the value prop. Three passes, three minutes, dramatically better spec.
 
-**Use `/clear` aggressively.** Context bleed between tasks is the #1 quality killer. Writing a PRD then a status update in the same session? The status update gets contaminated with PRD-style thinking. Clear between unrelated tasks.
+### Use @ References
 
-**Feed in real artifacts.** Don't describe your Slack thread — paste it. Don't summarize the user interview — paste the transcript. Skills extract and structure messy information; raw inputs produce the best output.
+Don't paste docs into chat — point to them:
 
-**Customize the examples.** Skills ship with generic examples. Replace them with real examples from your product. A sprint planner that knows your team's velocity and naming conventions outperforms a generic one every time.
+```
+Read @templates/prd-template.md and use that structure.
+Summarize @meeting-notes/standup-03-04.md into action items.
+Compare @competitor-notes/notion.md against @competitor-notes/monday.md.
+```
+
+Claude reads the file on demand. Your context window stays clean.
+
+### Use Plan Mode (Shift+Tab)
+
+Toggle before complex tasks. Forces Claude to outline its approach before executing. You approve the plan, then it runs. Best for PRDs with open questions, multi-file edits, anything where "undo" is expensive.
+
+### Set Up Hooks
+
+Unlike CLAUDE.md instructions (advisory), hooks run deterministically:
+
+```
+"Write a hook that spell-checks every file after I edit it"
+"Write a hook that blocks writes to /templates/"
+"Write a hook that runs a word count check — block any PRD over 1500 words"
+```
+
+Configure via `/hooks` or `.claude/settings.json`. Exit code 0 = proceed, exit code 2 = block with feedback.
+
+### Session Management
+
+- **`/clear` between unrelated tasks.** Context bleed is the #1 quality killer.
+- **Cap conversations at ~50 exchanges.** Quality degrades past this.
+- **Use handoffs.** Before ending a long session: "Write a HANDOFF.md." Next session: "Read @HANDOFF.md and continue."
+- **Run parallel sessions.** Multiple terminals, each with its own Claude instance and context window.
+- **Resume sessions.** `claude --continue` for last session, `claude --resume` to pick from history.
+
+### Make CLAUDE.md Self-Improving
+
+When Claude makes a mistake, correct it, then: "Add a rule to CLAUDE.md so you don't make that mistake again." Claude proposes the rule, you approve, it edits the file. Next session, the rule is loaded automatically. Prune quarterly.
+
+### Customize the Skills
+
+Skills ship with generic examples. Replace them with real examples from your product. A sprint planner that knows your team's velocity outperforms a generic one every time.
+
+### Feed in Real Artifacts
+
+Don't describe your Slack thread — paste it. Don't summarize the user interview — paste the transcript. Skills extract and structure messy information; raw inputs produce the best output.
+
+### Quick Reference
+
+```
+/clear              Reset context (CLAUDE.md reloads automatically)
+/hooks              Configure automation hooks
+/init               Generate a starter CLAUDE.md from your project
+/permissions        Set tool access rules
+Shift+Tab           Toggle Plan Mode
+Esc                 Cancel current generation
+claude --continue   Resume last session
+claude --resume     Pick a specific past session
+claude -p "prompt"  Non-interactive single prompt
+```
 
 ---
 
