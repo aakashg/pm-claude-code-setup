@@ -3,11 +3,11 @@
 [![Stars](https://img.shields.io/github/stars/aakashg/pm-claude-code-setup?style=flat-square)](https://github.com/aakashg/pm-claude-code-setup/stargazers)
 [![License](https://img.shields.io/github/license/aakashg/pm-claude-code-setup?style=flat-square)](LICENSE)
 
-A ready-to-use Claude Code configuration for product managers. Drop these files into your project and Claude Code immediately understands PM work.
+A production-ready Claude Code configuration for product managers. Drop these files into your project and Claude Code immediately understands PM work.
 
 Includes a `CLAUDE.md` context file, 6 PM skills, and 4 templates. Takes 60 seconds to set up.
 
-**This setup works on its own — drop it in and Claude Code immediately understands PM work. The full PM Operating System goes much further: 41+ skills, 7 sub-agent perspectives, a complete context library, launch templates, and sprint planning workflows that I've iterated on 100+ times.**
+**This setup works standalone. The full PM Operating System goes further: 41+ skills, 7 sub-agent perspectives, a complete context library, launch templates, and sprint planning workflows refined over 100+ iterations.**
 
 **[Get the full PM Operating System →](https://www.news.aakashg.com/p/pm-os)**
 
@@ -47,11 +47,11 @@ cp -r .claude/ /path/to/your/project/
 
 **Step 3:** Open Claude Code in your project. It loads automatically.
 
-That's it. Claude now knows you're a PM, follows your writing style, and can write PRDs on command.
+Done. Claude now knows you're a PM, follows your writing style, and writes PRDs on command.
 
 ## What the CLAUDE.md Does
 
-The `CLAUDE.md` file gives Claude persistent context about:
+`CLAUDE.md` gives Claude persistent context about:
 
 - **Your role and product** — so it doesn't ask "what do you do?" every session
 - **Your writing style** — direct, concise, no filler words
@@ -73,21 +73,21 @@ Say "write a PRD" or "create a PRD for [feature]" and Claude:
 
 ## Power Tips
 
-Once you're set up, these habits get the most out of the system:
+These habits maximize the system's value:
 
-**Chain the sub-agents for better PRDs.** Write the PRD, then: "Review as engineer" → fix gaps → "Review as skeptic" → tighten assumptions → "Review as customer" → simplify the value prop. Three passes, three minutes, dramatically better spec.
+**Chain sub-agents for better PRDs.** Write the PRD, then: "Review as engineer" -- fix gaps -- "Review as skeptic" -- tighten assumptions -- "Review as customer" -- simplify the value prop. Three passes, three minutes, dramatically better spec.
 
-**Use `/clear` aggressively.** Context bleed between tasks is the #1 quality killer. Writing a PRD and then a status update in the same session? The status update will be contaminated with PRD-style thinking. Clear between unrelated tasks.
+**Use `/clear` aggressively.** Context bleed between tasks is the #1 quality killer. Writing a PRD then a status update in the same session? The status update gets contaminated with PRD-style thinking. Clear between unrelated tasks.
 
-**Feed in real artifacts.** Don't describe your Slack thread — paste it. Don't summarize the user interview — paste the transcript. Skills work best with raw inputs because they're designed to extract and structure messy information.
+**Feed in real artifacts.** Don't describe your Slack thread — paste it. Don't summarize the user interview — paste the transcript. Skills extract and structure messy information; raw inputs produce the best output.
 
-**Customize the examples.** The skills ship with generic examples. Replace them with real examples from YOUR product. A sprint planner that knows your team's velocity and naming conventions produces better output than a generic one.
+**Customize the examples.** Skills ship with generic examples. Replace them with real examples from your product. A sprint planner that knows your team's velocity and naming conventions outperforms a generic one every time.
 
 ---
 
 ## Want the Full Setup?
 
-This setup handles the core PM workflow. The full PM OS covers every PM task I do daily:
+This setup covers the core PM workflow. The full PM OS covers every PM task I run daily:
 
 - 41+ custom skills for every PM task
 - 7 sub-agent perspectives (engineer, designer, executive, skeptic, customer, data analyst, legal)
@@ -105,13 +105,13 @@ Built by [Aakash Gupta](https://www.aakashg.com) | [Product Growth Newsletter](h
 
 ## Troubleshooting
 
-Common issues and how to fix them.
+Common issues and fixes.
 
 ### Claude doesn't seem to follow my CLAUDE.md instructions
 
-- **Check the file location.** CLAUDE.md must be in your project root (the directory where you run `claude`). Claude Code loads it automatically from the working directory.
-- **Check file size.** If your CLAUDE.md exceeds ~150 lines, Claude may start ignoring parts of it. Prune aggressively. Move domain knowledge into skills.
-- **Check for conflicting instructions.** If two rules contradict each other, Claude picks one unpredictably. Audit for conflicts.
+- **Check file location.** CLAUDE.md must be in your project root (the directory where you run `claude`). Claude Code loads it automatically from the working directory.
+- **Check file size.** Beyond ~150 lines, Claude starts ignoring instructions. Prune aggressively. Move domain knowledge into skills.
+- **Check for conflicting instructions.** Contradictory rules produce unpredictable behavior. Audit for conflicts.
 - **Restart the session.** Run `/clear` or start a new terminal. Claude loads CLAUDE.md at session start.
 
 ### Skills aren't triggering
@@ -123,9 +123,9 @@ Common issues and how to fix them.
 
 ### Claude forgets context mid-conversation
 
-- **You've hit context limits.** Long conversations degrade quality after ~50 exchanges. Use `/clear` and start fresh with a summary.
-- **Use handoffs.** Before clearing, ask Claude to write a HANDOFF.md summarizing state, decisions, and next steps. Start the new session with "Read @HANDOFF.md and continue."
-- **Don't paste huge docs.** Use `@` references instead of pasting entire documents into chat.
+- **Context limits.** Long conversations degrade after ~50 exchanges. Use `/clear` and start fresh with a summary.
+- **Use handoffs.** Before clearing, have Claude write a HANDOFF.md summarizing state, decisions, and next steps. Start the new session with "Read @HANDOFF.md and continue."
+- **Avoid pasting huge docs.** Use `@` references instead of pasting entire documents into chat.
 
 ### Hooks aren't running
 
@@ -135,12 +135,12 @@ Common issues and how to fix them.
 
 ### MCP servers won't connect
 
-- **Verify credentials.** Most MCP servers need API keys or OAuth tokens. Check that yours are current.
-- **Check the server config.** MCP connections are configured in Claude Code settings, not CLAUDE.md. CLAUDE.md just documents them for your reference.
-- **Restart Claude Code.** MCP connections are established at startup.
+- **Verify credentials.** Most MCP servers require API keys or OAuth tokens. Confirm yours are current.
+- **Check server config.** MCP connections are configured in Claude Code settings, not CLAUDE.md. CLAUDE.md only documents them for reference.
+- **Restart Claude Code.** MCP connections initialize at startup.
 
 ### "I changed CLAUDE.md but nothing changed"
 
-Claude reads CLAUDE.md at session start. If you edited it mid-session:
+Claude reads CLAUDE.md at session start. Mid-session edits require a reload:
 1. Run `/clear` to reset context (CLAUDE.md reloads automatically)
 2. Or start a new terminal session

@@ -1,7 +1,7 @@
 # User Research Synthesizer
 
 ## Trigger
-Activate when the user asks to "synthesize research", "analyze interviews", "research findings", "interview synthesis".
+Activate on "synthesize research", "analyze interviews", "research findings", "interview synthesis".
 
 ## Behavior
 
@@ -24,7 +24,7 @@ For each:
 | Theme | Frequency | Representative Quote | Implication |
 
 **Surprises**
-- What contradicted assumptions
+- What contradicted our assumptions
 
 **Gaps**
 - Questions not answered, segments not covered
@@ -73,7 +73,7 @@ Gaps:
 ```
 
 ## Rules
-- Use actual quotes, not paraphrased. Quotes are evidence. Paraphrases are interpretation.
-- Flag findings based on 1-2 participants as signals, not conclusions
-- Distinguish said vs did (behavior > stated preference)
-- Every finding needs a confidence level AND a product implication. A finding without "so what" is just trivia.
+- Use actual quotes, never paraphrases. Quotes are evidence. Paraphrases are interpretation.
+- Findings from 1-2 participants are signals, not conclusions. Label them accordingly.
+- Distinguish said vs. did. Behavior always outranks stated preference.
+- Every finding requires a confidence level AND a product implication. A finding without "so what" is trivia.

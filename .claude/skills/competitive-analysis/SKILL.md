@@ -1,7 +1,7 @@
 # Competitive Analysis
 
 ## Trigger
-Activate when the user asks to "analyze competitor", "competitive analysis", "compare us to [company]".
+Activate on "analyze competitor", "competitive analysis", "compare us to [company]".
 
 ## Behavior
 
@@ -19,7 +19,7 @@ Ask:
 - Key differentiator
 
 **What's Smart**
-- 3 decisions they got right and why
+- 3 decisions they nailed and why
 
 **What's Weak**
 - 3 gaps or missed opportunities
@@ -65,7 +65,7 @@ What's Weak:
 ```
 
 ## Rules
-- Use specifics. "Great UX" is useless. What specific interaction works?
+- Be specific. "Great UX" is useless. Name the interaction that works and why.
 - Flag unknowns with [NEED: more info on X]
-- Focus on product decisions, not visual design opinions
+- Analyze product decisions, not visual design opinions
 - Include numbers: pricing, conversion rates, market share, review counts. Data beats opinion.

@@ -1,7 +1,7 @@
 # Metrics Definer
 
 ## Trigger
-Activate when the user asks to "define metrics", "what should I measure", "success metrics for [feature]", "KPIs for [initiative]".
+Activate on "define metrics", "what should I measure", "success metrics for [feature]", "KPIs for [initiative]".
 
 ## Behavior
 
@@ -60,7 +60,7 @@ Anti-Metric:
 ```
 
 ## Rules
-- Every metric needs a precise definition. No "engagement" without defining what counts.
-- Flag metrics that need new instrumentation with [NEEDS INSTRUMENTATION]
-- Include the "how" — where does this data come from?
-- Anti-metrics are required. If you can't think of one, you haven't thought hard enough about perverse incentives.
+- Every metric needs a precise definition. "Engagement" without defining what counts is not a metric.
+- Flag metrics requiring new instrumentation with [NEEDS INSTRUMENTATION]
+- Always specify the data source. No metric exists without a measurement method.
+- Anti-metrics are mandatory. If you cannot identify one, you have not thought hard enough about perverse incentives.

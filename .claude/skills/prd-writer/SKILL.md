@@ -1,23 +1,23 @@
 # PRD Writer
 
 ## Trigger
-Activate when the user asks to "write a PRD", "create a PRD", "draft a PRD", "PRD for [feature]", "spec out [feature]", or "one pager for [feature]".
+Activate on "write a PRD", "create a PRD", "draft a PRD", "PRD for [feature]", "spec out [feature]", or "one pager for [feature]".
 
 ## Context
 
-The PRD isn't dead. The bad PRD is. AI killed the 10-page PRD — no one read those. The modern PRD is lighter, sharper, and example-heavy.
+The PRD isn't dead. The bad PRD is dead. AI killed the 10-page PRD — no one read those. The modern PRD is lighter, sharper, and example-heavy.
 
 Core philosophy:
-- **Think crisp, not complete.** Teammates hate reading AI-generated bloat and crave human-written clarity. 2-3 pages max.
-- **PRDs are for alignment, not dictatorships.** They facilitate discussion and decision-making. They're what you discuss, debate, refer to, and sync on.
-- **A PRD an engineering team actually wants to read nails the "why" and the "what," not the "how."**
-- **You don't write your PRD once. You write it over time.** The PRD is a living document that reflects the current state of the team's thinking at each stage.
+- **Think crisp, not complete.** Teammates hate AI-generated bloat and crave human-written clarity. 2-3 pages max.
+- **PRDs are for alignment, not dictation.** They drive discussion and decisions. They're what you discuss, debate, refer to, and sync on.
+- **A PRD engineers actually want to read nails the "why" and the "what," not the "how."**
+- **You don't write a PRD once. You write it over time.** The PRD is a living document reflecting the team's current thinking at each stage.
 
 ## Behavior
 
 ### Step 1: Clarify Before Writing
 
-Before generating anything, ask 3-5 clarifying questions. Tailor questions to what's missing. Common gaps:
+Before generating anything, ask 3-5 clarifying questions. Tailor to what's missing. Common gaps:
 
 - Who specifically has this problem? (Not "users" — which users? Job title, company size, situation)
 - What data do we have that this is worth solving? (Usage data, support tickets, revenue impact, customer quotes)
@@ -25,9 +25,9 @@ Before generating anything, ask 3-5 clarifying questions. Tailor questions to wh
 - Are there technical constraints the engineering team has flagged?
 - What's the timeline and why?
 
-Do NOT proceed until the user answers. A PRD without clear answers to these questions will be vague and useless.
+Do NOT proceed until the user answers. A PRD without clear answers to these is vague and useless.
 
-If the user says they're early-stage or just exploring, generate a "speclet" (Stage 1) — just enough information for the team to explore further. Don't force a full PRD on an idea that needs discovery first.
+If the user is early-stage or exploring, generate a "speclet" (Stage 1) — just enough for the team to explore further. Never force a full PRD on an idea that needs discovery first.
 
 ### Step 2: Determine the PRD Stage
 
@@ -46,7 +46,7 @@ Default to Stage 4 (Solution Review) unless the user specifies otherwise. This i
 
 ### Step 3: Generate the PRD
 
-Focus on the six essential elements. Every section earns its place — if a section doesn't drive a decision or prevent a mistake, cut it.
+Every section earns its place. If a section doesn't drive a decision or prevent a mistake, cut it.
 
 **Title:** [Feature Name]
 **Author:** [User's name if known]
@@ -56,17 +56,17 @@ Focus on the six essential elements. Every section earns its place — if a sect
 ---
 
 **1. Hypothesis**
-One sentence. Testable. This prevents wasted development cycles.
+One sentence. Testable. Prevents wasted development cycles.
 Format: "We believe [action] will [outcome] for [users], measured by [metric]."
 
-Example: "We believe that implementing one-click checkout for returning users will increase conversion rates by 15% because it reduces friction in the buying process."
+Example: "We believe one-click checkout for returning users will increase conversion rates by 15% by reducing friction in the buying process."
 
 **2. Problem**
 - Who has this problem (specific user segment, not "everyone")
 - How bad is it (frequency, severity, with data)
 - How are they solving it today (workarounds = strong signal)
 - What happens if we don't solve it
-- Customer evidence: quotes, support tickets, research findings. Don't skip this — a PRD without proof-of-work showing customer research is a PRD built on assumptions.
+- Customer evidence: quotes, support tickets, research findings. A PRD without customer evidence is a PRD built on assumptions.
 
 **3. Strategic Fit**
 - Why this problem, why now
@@ -82,7 +82,7 @@ Example: "We believe that implementing one-click checkout for returning users wi
 - For AI features: 15-25 example input/output pairs showing expected behavior, edge-case inputs, rejection criteria, and how the system handles unexpected or malformed inputs
 
 **5. Non-Goals**
-State these early. This is your best defense against scope creep.
+State these early. Best defense against scope creep.
 - What we're explicitly NOT doing in this version (be specific: "We are NOT building Outlook sync in V1")
 - Features we considered and cut, with one-line reasoning for each
 - Intentional trade-offs the team should understand
@@ -107,7 +107,7 @@ State these early. This is your best defense against scope creep.
 
 ### Step 4: Stage-Appropriate Checklist
 
-After generating, silently verify the PRD against the checklist for its stage. Flag any gaps to the user.
+After generating, verify the PRD against the checklist for its stage. Flag gaps to the user.
 
 **Planning Stage Checklist:**
 - [ ] Problem clearly defined with user segment?
@@ -148,7 +148,7 @@ After generating, offer:
 ```
 We believe improving the onboarding experience will lead to better user engagement.
 ```
-Problems: No specific action, no target user, no metric, no number. "Better" and "improving" mean nothing.
+No specific action, no target user, no metric, no number. "Better" and "improving" mean nothing.
 
 ### Good Hypothesis (specific, testable)
 ```
@@ -163,7 +163,7 @@ integrations screen) according to our June cohort analysis.
 Users find the current experience confusing and would benefit from improvements.
 Many users have expressed interest in a better solution.
 ```
-Problems: No specifics, no data, no customer quotes, no evidence of workarounds. This could describe any feature at any company.
+No specifics, no data, no customer quotes, no evidence of workarounds. This could describe any feature at any company.
 
 ### Good Problem Section (evidence-rich)
 ```
@@ -231,21 +231,21 @@ Non-Goals:
 
 ## Anti-Patterns (From Analyzing 500+ PRDs)
 
-**Fancy structure, empty content.** A PRD with every section filled but nothing actually said. Tautological filler like "Ensuring alignment with legal standards" instead of naming the specific legal risk and the plan to address it.
+**Fancy structure, empty content.** Every section filled, nothing actually said. Tautological filler like "Ensuring alignment with legal standards" instead of naming the specific legal risk and the mitigation plan.
 
-**Delegating your thinking.** Writing "Design will explore the optimal layout" instead of describing the user flow yourself and exploring edge cases. The designer should challenge and improve your thinking — not receive a blank canvas.
+**Delegating your thinking.** Writing "Design will explore the optimal layout" instead of describing the user flow and working through edge cases. The designer should challenge and improve your thinking — not receive a blank canvas.
 
-**No customer evidence.** The biggest red flag. If the PRD doesn't cite a single user quote, support ticket, or data point, it's a PRD built on vibes. Even 3 customer quotes transform a spec from opinion to evidence.
+**No customer evidence.** The single biggest red flag. Zero user quotes, zero support tickets, zero data points means a PRD built on vibes. Even 3 customer quotes transform a spec from opinion to evidence.
 
-**Hiding the controversial decision.** If you chose approach A over approach B and it was a close call, SAY SO. Explain why. This is where alignment actually happens. Burying the controversy guarantees it surfaces later as a blocker.
+**Hiding the controversial decision.** Close call between approach A and B? Say so. Explain why you chose. This is where alignment actually happens. Burying the controversy guarantees it resurfaces as a blocker.
 
-**Metrics without baselines.** "Increase conversion rate" means nothing without: what's the current rate, what's the target, and by when. A metric without a baseline is a wish, not a measurement.
+**Metrics without baselines.** "Increase conversion rate" is meaningless without the current rate, target, and deadline. A metric without a baseline is a wish, not a measurement.
 
-**Ending at launch.** The PRD lifecycle doesn't end at engineering handoff. Add a Stage 6 results link after launch. 50-92% of features at top tech companies don't work as expected — the learning is more valuable than the spec.
+**Ending at launch.** The PRD lifecycle extends past engineering handoff. Add a Stage 6 results link after launch. 50-92% of features at top tech companies miss expectations — the learning is more valuable than the spec.
 
-**Over-specifying the "how."** Engineers and designers are creative problem solvers. The PRD should obsess over the "why" and the "what" — not dictate pixel-level details or architecture choices. Specify the user outcome, not the implementation.
+**Over-specifying the "how."** Engineers and designers are creative problem solvers. Obsess over the "why" and the "what" — not pixel-level details or architecture choices. Specify the user outcome, not the implementation.
 
-**Writing for every audience at once.** Different stakeholders have contradictory complaints: founders find PRDs overwrought, designers find them too prescriptive, engineers want more detail. The solution: be stage-appropriate. Bare-bones early, detailed later, always focused on decisions.
+**Writing for every audience at once.** Founders find PRDs overwrought, designers find them too prescriptive, engineers want more detail. The fix: be stage-appropriate. Bare-bones early, detailed later, always focused on decisions.
 
 ---
 
@@ -254,7 +254,7 @@ Non-Goals:
 - **Flag missing information** with `[NEED: data from X]` rather than making things up. Never fabricate data, customer quotes, or metrics.
 - **Use specific numbers.** Not "improve engagement" — "increase 7-day activation from 23% to 35%."
 - **No filler.** Every sentence should add information or drive a decision. Cut anything that fails the "so what?" test.
-- **Non-goals go early.** They're your best defense against scope creep. State them before the solution section.
+- **Non-goals go early.** Best defense against scope creep. State them before the solution section.
 - **For AI features**, add a dedicated section with: 15-25 behavior examples (input/output pairs), edge cases, rejection criteria, and eval criteria.
-- **The PRD should be strong enough to align the team without a meeting.** If someone reads it and still needs a 30-minute walkthrough, it's not done.
+- **A strong PRD aligns the team without a meeting.** If someone reads it and still needs a 30-minute walkthrough, it's not done.
 - **Documents are your voice when you're not in the room.** Treat them accordingly.

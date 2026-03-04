@@ -1,7 +1,7 @@
 # Launch Checklist
 
 ## Trigger
-Activate when the user asks to "launch checklist", "pre-launch check", "ready to launch?", "launch prep".
+Activate on "launch checklist", "pre-launch check", "ready to launch?", "launch prep".
 
 ## Behavior
 
@@ -43,7 +43,7 @@ Ask:
 
 ## Risk Scaling
 
-Adapt the checklist based on risk level:
+Scale the checklist to risk level:
 
 | Risk Level | When | What to Add |
 |-----------|------|-------------|
@@ -63,8 +63,8 @@ Adapt the checklist based on risk level:
 **Good:** "Monitor error rate in Datadog for 2 hours post-deploy. Baseline: 0.3%. Alert threshold: 0.5%. Rollback threshold: 1.0%."
 
 ## Rules
-- Higher risk = more checklist items. Adapt the list.
-- Every checklist item needs an owner and a deadline (not "soon" — a time)
-- Don't launch on Friday afternoons
-- If you can't roll back in under 5 minutes, add more testing time
-- Every checklist item should be verifiable — "done" means someone can check it, not just feel it
+- Higher risk = more checklist items. Scale accordingly.
+- Every item needs an owner and a deadline. Not "soon" — a time.
+- Never launch on Friday afternoons
+- If rollback takes more than 5 minutes, add more testing time
+- Every item must be verifiable. "Done" means someone can confirm it, not just feel it.

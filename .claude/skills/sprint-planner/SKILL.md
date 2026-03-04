@@ -1,7 +1,7 @@
 # Sprint Planner
 
 ## Trigger
-Activate when the user asks to "plan sprint", "sprint planning", "what should we work on", "organize the backlog".
+Activate on "plan sprint", "sprint planning", "what should we work on", "organize the backlog".
 
 ## Behavior
 
@@ -63,7 +63,7 @@ Risks:
 ```
 
 ## Rules
-- 80% capacity is the target. Don't overload. Every sprint that goes over 80% has a >50% chance of missing the goal.
-- Flag items with unclear requirements — these are estimation landmines
-- Dependencies must be resolved before sprint starts, or the item doesn't go in
-- Every item needs a definition of done
+- 80% capacity is the ceiling. Sprints loaded above 80% have a >50% chance of missing the goal.
+- Flag items with unclear requirements. Unclear requirements are estimation landmines.
+- Unresolved dependencies block sprint entry. Resolve before committing the item.
+- Every item needs a definition of done.
