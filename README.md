@@ -5,7 +5,7 @@
 
 A ready-to-use Claude Code configuration for product managers. Drop these files into your project and Claude Code immediately understands PM work.
 
-Includes a `CLAUDE.md` context file and a PRD writer skill. Takes 60 seconds to set up.
+Includes a `CLAUDE.md` context file, 6 PM skills, and 4 templates. Takes 60 seconds to set up.
 
 **This setup works on its own — drop it in and Claude Code immediately understands PM work. The full PM Operating System goes much further: 41+ skills, 7 sub-agent perspectives, a complete context library, launch templates, and sprint planning workflows that I've iterated on 100+ times.**
 
@@ -18,10 +18,19 @@ Includes a `CLAUDE.md` context file and a PRD writer skill. Takes 60 seconds to 
 ```
 pm-claude-code-setup/
 ├── CLAUDE.md                           # Master context file — drop in your project root
+├── templates/
+│   ├── prd-template.md                 # Blank PRD structure
+│   ├── launch-plan.md                  # Launch planning template
+│   ├── okr-template.md                 # OKR scorecard
+│   └── sprint-review.md               # Sprint review template
 └── .claude/
     └── skills/
-        └── prd-writer/
-            └── SKILL.md                # PRD writing skill — triggers on "write a PRD"
+        ├── prd-writer/                 # "write a PRD" → structured PRD with clarifying questions
+        ├── competitive-analysis/       # "analyze competitor" → smart/weak/implications framework
+        ├── launch-checklist/           # "launch checklist" → risk-scaled pre/post launch plan
+        ├── metrics-definer/            # "define metrics" → primary, guardrail, and anti-metrics
+        ├── sprint-planner/             # "plan sprint" → capacity-checked sprint with risks
+        └── user-research/              # "synthesize research" → evidence-ranked findings
 ```
 
 ## Quick Setup
@@ -61,6 +70,20 @@ Say "write a PRD" or "create a PRD for [feature]" and Claude:
 3. Flags missing info with `[NEED: data from X]` placeholders
 4. Keeps it under 2 pages unless you ask for more
 5. Includes success metrics with specific numbers and guardrails
+
+## Power Tips
+
+Once you're set up, these habits get the most out of the system:
+
+**Chain the sub-agents for better PRDs.** Write the PRD, then: "Review as engineer" → fix gaps → "Review as skeptic" → tighten assumptions → "Review as customer" → simplify the value prop. Three passes, three minutes, dramatically better spec.
+
+**Use `/clear` aggressively.** Context bleed between tasks is the #1 quality killer. Writing a PRD and then a status update in the same session? The status update will be contaminated with PRD-style thinking. Clear between unrelated tasks.
+
+**Feed in real artifacts.** Don't describe your Slack thread — paste it. Don't summarize the user interview — paste the transcript. Skills work best with raw inputs because they're designed to extract and structure messy information.
+
+**Customize the examples.** The skills ship with generic examples. Replace them with real examples from YOUR product. A sprint planner that knows your team's velocity and naming conventions produces better output than a generic one.
+
+---
 
 ## Want the Full Setup?
 

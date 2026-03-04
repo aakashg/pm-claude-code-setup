@@ -29,8 +29,41 @@ Ask:
 
 **Risks to This Sprint**
 
+## Example
+
+**Bad sprint plan (no capacity math, no priorities):**
+```
+Sprint Goal: Work on stuff
+Items: Auth, Dashboard, Bugs, API, Docs
+```
+
+**Good sprint plan:**
+```
+Sprint Goal: Ship auth migration to 100% of web users
+
+Capacity: 3 engineers x 10 days = 30 eng-days. At 80% = 24 available.
+
+| Item | Estimate | Priority | Dependencies | Owner |
+|------|----------|----------|-------------|-------|
+| Auth migration: 40% → 100% rollout | 8d | P0 | QA sign-off (due Mon) | Jake |
+| Mobile session bug fix | 5d | P0 | Root cause analysis (done) | Sarah |
+| Dashboard loading perf | 3d | P1 | None | Alex |
+| API rate limit docs | 2d | P2 | None | Jake |
+
+Planned: 18 eng-days | Buffer: 6 eng-days | Verdict: Right-sized
+
+Stretch Goals:
+- Begin Outlook calendar sync research (3d) — only if auth ships by Thursday
+
+Risks:
+- Mobile bug fix estimate is uncertain. If root cause is deeper than
+  diagnosed, it could take 8d instead of 5d. Mitigation: Jake pairs
+  with platform team. If not resolved by Wednesday, descope and carry
+  to next sprint.
+```
+
 ## Rules
-- 80% capacity is the target. Don't overload.
-- Flag items with unclear requirements
-- Dependencies must be resolved before sprint starts
+- 80% capacity is the target. Don't overload. Every sprint that goes over 80% has a >50% chance of missing the goal.
+- Flag items with unclear requirements — these are estimation landmines
+- Dependencies must be resolved before sprint starts, or the item doesn't go in
 - Every item needs a definition of done

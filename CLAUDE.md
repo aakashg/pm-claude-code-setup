@@ -82,4 +82,20 @@ O1: Increase activation rate for new users
 
 ---
 
+## Session Management
+
+- Use `/clear` between unrelated tasks. Context bleed is the #1 cause of degraded output.
+- Don't let conversations exceed ~50 exchanges. Quality drops as context fills up.
+- Before ending a long session, ask Claude to summarize: "Write a HANDOFF.md with current state, what's done, what's next, and blockers." Next session: "Read @HANDOFF.md and continue."
+- Use `Shift+Tab` (Plan Mode) before complex multi-file tasks. Plan first, execute after approval.
+
+## MCP Connections
+
+[FILL IN any MCP servers you've connected, e.g.:]
+- Notion: reading/writing product docs
+- Linear/Jira: creating and updating tickets
+- Slack: sending messages, reading channels
+
+---
+
 > **Want the full PM OS?** This starter covers the basics. The complete system has 41+ skills, 7 sub-agents, a context library, and templates. [Get it here →](https://www.news.aakashg.com/p/pm-os)

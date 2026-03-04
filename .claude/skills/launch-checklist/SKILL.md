@@ -41,8 +41,30 @@ Ask:
 - [ ] Ship or iterate decision
 - [ ] Retrospective if needed
 
+## Risk Scaling
+
+Adapt the checklist based on risk level:
+
+| Risk Level | When | What to Add |
+|-----------|------|-------------|
+| **Low** | Config change, copy update, small UI tweak | Minimal — deploy, monitor for 30 min, done |
+| **Medium** | New feature behind flag, migration with rollback | Full checklist above. 2-hour monitoring window |
+| **High** | Pricing change, auth flow, data migration, public-facing API | Everything above PLUS: staged rollout (1% → 10% → 50% → 100%), war room channel, exec notification, 24-hour monitoring |
+
+## Example: Good vs Bad Launch Checklist Items
+
+**Bad:** "Make sure everything works"
+**Good:** "Verify signup flow completes end-to-end in staging (email → verification → first dashboard load). Test with Gmail, Outlook, and corporate SSO."
+
+**Bad:** "Tell the team"
+**Good:** "Post in #eng-launches: what shipped, who's on-call, rollback command, link to monitoring dashboard."
+
+**Bad:** "Watch metrics"
+**Good:** "Monitor error rate in Datadog for 2 hours post-deploy. Baseline: 0.3%. Alert threshold: 0.5%. Rollback threshold: 1.0%."
+
 ## Rules
 - Higher risk = more checklist items. Adapt the list.
-- Every checklist item needs an owner
+- Every checklist item needs an owner and a deadline (not "soon" — a time)
 - Don't launch on Friday afternoons
 - If you can't roll back in under 5 minutes, add more testing time
+- Every checklist item should be verifiable — "done" means someone can check it, not just feel it

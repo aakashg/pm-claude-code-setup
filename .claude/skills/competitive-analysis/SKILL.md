@@ -27,7 +27,45 @@ Ask:
 **Implications for Us**
 - What to copy, what to avoid, where to differentiate
 
+## Example
+
+**Bad analysis (vague, no evidence):**
+```
+What's Smart:
+- They have a good product
+- Nice onboarding
+- Growing fast
+
+What's Weak:
+- Some features are missing
+- Could be cheaper
+```
+
+**Good analysis (specific, actionable):**
+```
+What's Smart:
+1. Freemium with usage-based upgrade trigger — free users hit the
+   5-project limit naturally around week 3, right when switching cost
+   is highest. Conversion to paid: ~8% (industry avg: 3-5%).
+2. API-first architecture — 400+ integrations in marketplace. This
+   creates lock-in that pure UX improvements can't match.
+3. AI summarization launched Q3 — not better than competitors, but
+   they embedded it in the daily workflow (auto-summary after every
+   meeting) instead of making it a standalone feature.
+
+What's Weak:
+1. Enterprise pricing is opaque — requires "contact sales" for teams
+   over 50. Mid-market buyers (our sweet spot) hate this. Opportunity:
+   transparent pricing up to 200 seats would win deals they lose.
+2. Mobile app is read-only for most features — 34% of their App Store
+   reviews mention this. Their mobile MAU/DAU ratio is 0.3 vs. 0.6 on
+   desktop. Opportunity: mobile-first editing.
+3. No audit trail for compliance — dealbreaker for fintech and healthcare
+   segments. They lose these verticals entirely.
+```
+
 ## Rules
 - Use specifics. "Great UX" is useless. What specific interaction works?
 - Flag unknowns with [NEED: more info on X]
 - Focus on product decisions, not visual design opinions
+- Include numbers: pricing, conversion rates, market share, review counts. Data beats opinion.
